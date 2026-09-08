@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { siteConfig } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,9 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JDP.Soft — Websites, AI & Automation That Help Businesses Grow",
-  description:
-    "We build websites, lead-generation systems, AI agents, and custom software that help businesses get more customers and eliminate repetitive work.",
+  title: `${siteConfig.name} — ${siteConfig.tagline}`,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
