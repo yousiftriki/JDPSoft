@@ -1,4 +1,4 @@
-import { ArrowUpRight, Bot, CheckCircle2, MessageSquare, Users } from "lucide-react";
+import { ArrowUpRight, Bot } from "lucide-react";
 import { StatusDot } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
 
@@ -69,7 +69,7 @@ export function DashboardMockup({ className }: { className?: string }) {
         </div>
 
         {/* AI assistant */}
-        <div className="flex items-start gap-3 bg-white p-5">
+        <div className="flex items-start gap-3 bg-white p-5 sm:col-span-2">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black text-white">
             <Bot className="h-4 w-4" />
           </span>
@@ -78,24 +78,6 @@ export function DashboardMockup({ className }: { className?: string }) {
             <p className="mt-1 truncate text-sm text-ink/80">
               Booked a call with Sarah M. — Thu, 2:00 PM
             </p>
-          </div>
-        </div>
-
-        {/* support tickets */}
-        <div className="bg-white p-5">
-          <div className="mb-2 flex items-center gap-2 text-xs font-medium text-muted">
-            <MessageSquare className="h-3.5 w-3.5" />
-            Support Tickets
-          </div>
-          <div className="flex items-center gap-4 text-sm">
-            <span className="flex items-center gap-1.5 text-ink/80">
-              <CheckCircle2 className="h-3.5 w-3.5 text-ink/40" />
-              14 resolved
-            </span>
-          </div>
-          <div className="mt-1 flex items-center gap-1.5 text-sm text-ink/80">
-            <Users className="h-3.5 w-3.5 text-ink/40" />
-            2 open
           </div>
         </div>
       </div>

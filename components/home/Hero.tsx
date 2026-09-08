@@ -17,27 +17,22 @@ export function Hero() {
           </span>
 
           <h1 className="max-w-xl text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
-            Websites, AI &amp; Automation That Help Businesses Grow
+            Websites, AI &amp; Automation for Growing Businesses
           </h1>
 
           <p className="max-w-lg text-base leading-relaxed text-white/60 sm:text-lg">
-            We build websites, lead-generation systems, AI agents, and custom
-            software that help businesses get more customers and eliminate
-            repetitive work.
+            JDPsoft builds digital systems that help businesses capture leads,
+            respond faster, and eliminate repetitive work.
           </p>
 
           <div className="mt-2 flex flex-col gap-3 sm:flex-row">
             <Button href="/book-a-call" size="lg">
               Book a Free Strategy Call
             </Button>
-            <Button href="#solutions" variant="outline" size="lg">
-              See What We Build
+            <Button href="#audit" variant="outline" size="lg">
+              Get a Free Audit
             </Button>
           </div>
-
-          <p className="text-xs text-white/40">
-            No pressure. No sales script. Just a conversation about your business.
-          </p>
         </div>
 
         <div className="flex justify-center lg:justify-end">

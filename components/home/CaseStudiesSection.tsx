@@ -11,8 +11,8 @@ export function CaseStudiesSection() {
     <section className="py-24 sm:py-28">
       <Container className="flex flex-col items-center gap-14">
         <SectionHeading
-          title="Real systems, built for real businesses"
-          description="A look at the shape of work we do. Full client case studies are coming soon."
+          title="Selected work"
+          description="Client case studies are coming soon. Here's the shape of what we build."
         />
 
         <div className="grid w-full gap-5 lg:grid-cols-3">

@@ -1,10 +1,8 @@
 import { Hero } from "@/components/home/Hero";
 import { LogoCloud } from "@/components/home/LogoCloud";
-import { ProblemsSection } from "@/components/home/ProblemsSection";
 import { SolutionsSection } from "@/components/home/SolutionsSection";
-import { HowItWorks } from "@/components/home/HowItWorks";
+import { WhyChooseSection } from "@/components/home/WhyChooseSection";
 import { AuditSection } from "@/components/home/AuditSection";
-import { PackagesSection } from "@/components/home/PackagesSection";
 import { CaseStudiesSection } from "@/components/home/CaseStudiesSection";
 import { FAQSection } from "@/components/home/FAQSection";
 import { FinalCTA } from "@/components/home/FinalCTA";
@@ -14,11 +12,9 @@ export default function Home() {
     <>
       <Hero />
       <LogoCloud />
-      <ProblemsSection />
       <SolutionsSection />
-      <HowItWorks />
+      <WhyChooseSection />
       <AuditSection />
-      <PackagesSection />
       <CaseStudiesSection />
       <FAQSection />
       <FinalCTA />

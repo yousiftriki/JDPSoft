@@ -10,6 +10,11 @@ type Particle = {
   y: number;
   vx: number;
   vy: number;
+  // each particle's own slow cruise velocity — it eases back toward this
+  // instead of decaying to a stop, so the field stays alive with no cursor
+  // input at all (touch devices, or a mouse that's just sitting still)
+  driftVx: number;
+  driftVy: number;
   radius: number;
   color: [number, number, number];
   baseAlpha: number;
@@ -109,23 +114,31 @@ export function ParticleBackground({
     let running = false;
 
     function seedParticles() {
-      const isMobile = width < 640;
+      // "compact" covers phones and tablets — narrow viewport OR touch as
+      // the primary pointer — both get a lighter, calmer field
+      const isCompact = width < 1024 || isCoarsePointer;
       const area = width * height;
-      const densityDivisor = isMobile ? config.areaPerParticle * 1.8 : config.areaPerParticle;
+      const densityDivisor = isCompact ? config.areaPerParticle * 1.8 : config.areaPerParticle;
       const count = Math.round(
         Math.min(config.maxCount, Math.max(config.minCount, area / densityDivisor)) *
-          (isMobile ? 0.6 : 1),
+          (isCompact ? 0.6 : 1),
       );
 
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * config.speed,
-        vy: (Math.random() - 0.5) * config.speed,
-        radius: Math.random() * 1.3 + 0.8,
-        color: pickColor(),
-        baseAlpha: Math.random() * 0.3 + 0.35,
-      }));
+      particles = Array.from({ length: count }, () => {
+        const driftVx = (Math.random() - 0.5) * config.speed;
+        const driftVy = (Math.random() - 0.5) * config.speed;
+        return {
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: driftVx,
+          vy: driftVy,
+          driftVx,
+          driftVy,
+          radius: Math.random() * 1.3 + 0.8,
+          color: pickColor(),
+          baseAlpha: Math.random() * 0.3 + 0.35,
+        };
+      });
     }
 
     function resize() {
@@ -223,8 +236,10 @@ export function ParticleBackground({
           }
         }
 
-        p.vx *= 0.98;
-        p.vy *= 0.98;
+        // ease toward the particle's own ambient drift rather than decaying
+        // to zero — keeps slow, natural motion going with no pointer at all
+        p.vx += (p.driftVx - p.vx) * 0.02;
+        p.vy += (p.driftVy - p.vy) * 0.02;
         const speedCap = config.speed * 2.2;
         p.vx = Math.max(-speedCap, Math.min(speedCap, p.vx));
         p.vy = Math.max(-speedCap, Math.min(speedCap, p.vy));

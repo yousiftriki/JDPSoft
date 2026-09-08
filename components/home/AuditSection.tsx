@@ -24,7 +24,7 @@ export function AuditSection() {
           align="left"
           eyebrow="Free Audit"
           title="Get a Free Growth &amp; Automation Audit"
-          description="Tell us about your business and we'll identify website, marketing, lead-generation, and automation opportunities before your strategy call."
+          description="Tell us about your business. We'll look for opportunities to improve your website, lead flow, and repetitive workflows."
           className="lg:pr-6"
         />
 
@@ -51,19 +51,19 @@ export function AuditSection() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <Label htmlFor="businessName">Business name</Label>
-                    <Input id="businessName" name="businessName" required placeholder="Acme Plumbing" />
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" name="name" required placeholder="Jane Doe" />
                   </div>
                   <div>
-                    <Label htmlFor="websiteUrl">Website URL</Label>
-                    <Input id="websiteUrl" name="websiteUrl" placeholder="acmeplumbing.com" />
+                    <Label htmlFor="business">Business</Label>
+                    <Input id="business" name="business" required placeholder="Acme Plumbing" />
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" name="name" required placeholder="Jane Doe" />
+                    <Label htmlFor="website">Website</Label>
+                    <Input id="website" name="website" placeholder="acmeplumbing.com" />
                   </div>
                   <div>
                     <Label htmlFor="email">Email</Label>
@@ -77,16 +77,16 @@ export function AuditSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="challenge">Biggest challenge</Label>
+                  <Label htmlFor="challenge">What do you want to improve?</Label>
                   <Textarea
                     id="challenge"
                     name="challenge"
-                    placeholder="What's slowing your business down right now?"
+                    placeholder="Website, lead follow-up, repetitive tasks..."
                   />
                 </div>
 
                 <Button type="submit" className="mt-2 w-full">
-                  Get My Free Audit
+                  Request My Audit
                 </Button>
               </form>
             )}
