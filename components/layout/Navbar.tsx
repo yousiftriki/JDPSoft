@@ -7,6 +7,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { navLinks } from "@/lib/constants";
+import { basePath } from "@/lib/basePath";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -18,7 +19,7 @@ export function Navbar() {
       <Container className="flex h-18 items-center justify-between py-3">
         <Link href="/" className="flex items-center" onClick={() => setMobileOpen(false)}>
           <Image
-            src="/logo-black.png"
+            src={`${basePath}/logo-black.png`}
             alt="JDP.Soft"
             width={725}
             height={239}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { solutions } from "@/lib/constants";
+import { basePath } from "@/lib/basePath";
 
 const companyLinks = [
   { label: "About", href: "/about" },
@@ -22,7 +23,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="col-span-2 flex flex-col gap-4 lg:col-span-2">
             <Image
-              src="/logo-white.png"
+              src={`${basePath}/logo-white.png`}
               alt="JDP.Soft"
               width={746}
               height={237}
