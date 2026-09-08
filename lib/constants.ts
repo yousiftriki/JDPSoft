@@ -133,10 +133,15 @@ export const faqs = [
   },
 ];
 
-export const trustedByPlaceholders = [
-  "Business One",
-  "Business Two",
-  "Business Three",
-  "Business Four",
-  "Business Five",
+export type TrustedBusiness = {
+  name: string;
+  href: string;
+};
+
+export const trustedBusinesses: TrustedBusiness[] = [
+  { name: "223 Barber House", href: "http://www.223barberhouse.com" },
+  { name: "223 Barber College", href: "http://college.223barberhouse.com" },
+  { name: "WTM", href: "http://www.wtmnow.com" },
+  { name: "Maple Valley Real Estate", href: "http://www.maplevalleyre.com" },
+  { name: "The Home Watch Agency", href: "http://www.thehomewatchagency.com" },
 ];
